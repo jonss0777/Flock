@@ -1,9 +1,10 @@
-import Image from "next/image";
+'use client'
+import MenuAppBar from "./MenuBar";
 
 export default function Home() {
   return (
     <div >
-      <p>Hello World</p>
+      <MenuAppBar></MenuAppBar>
 
     </div>
   );
