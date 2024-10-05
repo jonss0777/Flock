@@ -1,10 +1,15 @@
 
-import MenuAppBar from "./MenuBar"
+import "./globals.css";
+
+import MenuAppBar from "./MenuBar";
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body
+       
+      >
          <MenuAppBar></MenuAppBar>
         {children}
       </body>
