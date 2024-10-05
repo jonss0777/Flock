@@ -16,9 +16,9 @@ export default function BoxSx() {
         >
             <Box
                 sx={{
-                    width: 1000,
+                    width: 2000,
                     height: 1000,
-                    borderRadius: 1,
+                    borderRadius: 0,
                     bgcolor: 'primary.main',
                     '&:hover': {
                         bgcolor: 'primary.dark',
