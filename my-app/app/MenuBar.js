@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -13,8 +13,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemText from '@mui/material/ListItemText';
-import SettingsIcon from '@mui/icons-material/Settings'; // Import SettingsIcon
-import CloseIcon from '@mui/icons-material/Close'; // Import CloseIcon
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export default function MenuAppBar() {
     const [auth, setAuth] = React.useState(true);
@@ -34,20 +33,25 @@ export default function MenuAppBar() {
         console.log('Clicked on Messages');
     };
 
+    const handleHomeClick = () => {
+        // Navigate to the homepage
+        window.location.href = '/';
+    };
+
     const list = () => (
         <Box
-            sx={{ width: 250, height: '100%', backgroundColor: '#E0F7FA' }} // Set the background color to light blue
+            sx={{ width: 250, height: '100%', backgroundColor: '#E0F7FA' }}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
             display="flex"
             flexDirection="column"
         >
-            <Box display="flex" flexDirection="column" alignItems="center" flexGrow={1}> {/* Center align the top content */}
+            <Box display="flex" flexDirection="column" alignItems="center" flexGrow={1}>
                 <List>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar alt={username} src="/static/images/avatar/1.jpg" /> {/* Replace with your avatar URL */}
+                            <Avatar alt={username} src="./static/images/avatar/1.jpg" />
                         </ListItemAvatar>
                         <ListItemText
                             primary={username}
@@ -56,7 +60,7 @@ export default function MenuAppBar() {
                                     Affiliation: {collegeName}
                                 </Typography>
                             }
-                            sx={{ textAlign: 'center' }} // Center text alignment for username
+                            sx={{ textAlign: 'center' }}
                         />
                     </ListItem>
                 </List>
@@ -64,10 +68,10 @@ export default function MenuAppBar() {
                 {/* Contribution Points Box */}
                 <Box
                     sx={{
-                        marginTop: 2, // Space above the box
-                        padding: 1, // Padding inside the box
-                        textAlign: 'center', // Center text alignment
-                        width: '80%' // Width of the box
+                        marginTop: 2,
+                        padding: 1,
+                        textAlign: 'center',
+                        width: '80%'
                     }}
                 >
                     <Typography variant="body2" color="text.primary">
@@ -76,13 +80,14 @@ export default function MenuAppBar() {
                 </Box>
 
                 {/* Project List Button */}
-                <ListItem button onClick={handleProjectListClick}>
-                    <IconButton size="small" sx={{ marginRight: 1 }}> {/* X icon on the left side */}
-                        <CloseIcon />
-                    </IconButton>
+                <ListItem
+                    button
+                    onClick={handleProjectListClick}
+                    sx={{ userSelect: 'none' }} // Prevent text selection
+                >
                     <ListItemText
                         primary={
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left', color: 'black' }}> {/* Change text color to black */}
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left', color: 'black' }}>
                                 Project List
                             </Typography>
                         }
@@ -90,13 +95,14 @@ export default function MenuAppBar() {
                 </ListItem>
 
                 {/* Messages Button */}
-                <ListItem button onClick={handleMessagesClick}>
-                    <IconButton size="small" sx={{ marginRight: 1 }}> {/* X icon on the left side */}
-                        <CloseIcon />
-                    </IconButton>
+                <ListItem
+                    button
+                    onClick={handleMessagesClick}
+                    sx={{ userSelect: 'none' }} // Prevent text selection
+                >
                     <ListItemText
                         primary={
-                            <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left', color: 'black' }}> {/* Change text color to black */}
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left', color: 'black' }}>
                                 Messages
                             </Typography>
                         }
@@ -105,14 +111,14 @@ export default function MenuAppBar() {
             </Box>
 
             {/* Settings Button at the bottom */}
-            <Box sx={{ marginTop: 'auto' }}> {/* This box ensures the settings button is at the bottom */}
+            <Box sx={{ marginTop: 'auto' }}>
                 <ListItem button>
                     <ListItemAvatar>
-                        <SettingsIcon sx={{ color: 'black' }} /> {/* Change settings icon color to black */}
+                        <SettingsIcon sx={{ color: 'black' }} />
                     </ListItemAvatar>
                     <ListItemText
                         primary="Settings"
-                        sx={{ textAlign: 'left', marginLeft: -3, color: 'black' }} // Change settings text color to black
+                        sx={{ textAlign: 'left', marginLeft: -3, color: 'black', userSelect: 'none' }} // Prevent text selection
                     />
                 </ListItem>
             </Box>
@@ -121,22 +127,54 @@ export default function MenuAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ backgroundColor: 'white' }}> {/* Set AppBar background color to white */}
+            <AppBar position="static" sx={{ backgroundColor: 'white' }}>
                 <Toolbar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black' }}>
-                        image
-                    </Typography>
+                    {/* Add your logo image */}
+                    <ListItemAvatar>
+                        <Avatar alt={username} src="./logo.png" sx={{ width: 56, height: 56, marginTop: '10px' }} />
+                    </ListItemAvatar>
+
+                    {/* Second image as a button to navigate to the homepage */}
+                    <IconButton
+                        onClick={handleHomeClick}
+                        disableRipple
+                        sx={{
+                            marginLeft: '30px',
+                            marginTop: '5px',
+                            padding: 0, // Remove padding
+                            borderRadius: 0, // Keep corners sharp
+                            width: 'auto', // Let the width adjust automatically
+                            height: 'auto', // Let the height adjust automatically
+                            '&:focus': {
+                                outline: 'none', // Remove the focus outline
+                                boxShadow: 'none' // Remove any box shadow if present
+                            }
+                        }}
+                    >
+                        <img
+                            src="./FLOC.png"
+                            alt="Second Image"
+                            style={{
+                                width: 70,
+                                height: 40,
+                                marginTop: '10px'
+                            }}
+                        />
+                    </IconButton>
+
+                    {/* Add the menu button on the right */}
                     {auth && (
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            color="black"
-                            aria-label="menu"
-                            sx={{ ml: 2 }} // Adjust margin left for spacing
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                        <Box sx={{ marginLeft: 'auto' }}>
+                            <IconButton
+                                size="large"
+                                edge="end"
+                                color="black"
+                                aria-label="menu"
+                                onClick={toggleDrawer(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        </Box>
                     )}
                 </Toolbar>
             </AppBar>
