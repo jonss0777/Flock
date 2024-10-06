@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   ...theme.typography.body2,
@@ -20,66 +21,118 @@ const Item = styled(Paper)(({ theme }) => ({
   }),
 }));
 
+
+
+
 export default function Home() {
   return (
-    <Box width={2000} height={4000} flexDirection={"column"} m={2} >
 
-      <Box width={2000} height={1000} sx={{ flexGrow: 1 }}>
+    <Box width={2000} height={2000} display="flex" flexDirection="column" m={2} >
 
-        <Grid container spacing={0} direction="row">
-          <Grid item style={{ width: '70%', backgroundColor: "white", height: 1000 }} >
-            <Card>
+      {/* Top box */}
 
-            </Card>
-          </Grid>
-          <Grid item style={{ width: '30%', backgroundColor: "skyblue", height: 1000 }}>
-            {/* Item 2 */}
+      <Box width={2000} height={1000} display="flex" flexDirection={"row"} m={2} >
 
-          </Grid>
+        <Box sx={{ width: '70%', height: 1000, backgroundColor: 'red' }}>
+          <img alt="someImage"src="/public/logo.jpg"></img>
+
+          <Typography variant="h3">Hey how are you</Typography>
+          <Typography variant="body1">Some random text should go here</Typography>
 
 
-        </Grid>
 
+        </Box>
+
+        <Box sx={{ width: '30%', height: 1000, backgroundColor: 'lightblue' }}>
+
+
+        </Box>
       </Box>
-      <Box width={2000} height={1000} sx={{ flexGrow: 1 }}>
 
-        <Grid container spacing={0} direction="row" m={2}>
-          <Grid item style={{ width: '70%', backgroundColor: "green", height: 1000 }} >
-            {/* Title Box */}
-            <Box>
-              <p>Title Goes here</p>
+      {/* Lower Box */}
+      <Box width={2000} height={1000} display="flex" flexDirection={"row"} m={2} >
+
+        <Box display="flex" justifyContent={"center"} alignItems={"center"} sx={{ width: '70%', height: 1000 }}>
+
+          <Box diplay="flex" flexDirection={"column"} sx={{ width: '80%', height: 800, }}>
+
+
+
+            <Box  display="flex" justifyContent="center" alignItems="center" sx={{ width: '100%', height: "10%", backgroundColor: 'darkgrey' }}>
+              <Typography variant="h2">Title</Typography>
             </Box>
-            {/* Card*/}
-            <Box>
 
-              {/* Box 1 */}
-              <Grid>
-                <p>Box 1</p>
-              </Grid>
-              {/* Box 2 */}
-              <Grid>
-              <p>Box 2</p>
-              </Grid>
-              {/* Box 3 */}
-              <Grid>
-              <p>Box 3</p>
-              </Grid>
-              {/* Box 4 */}
-              <Grid>
-              <p>Box 4</p>
-              </Grid>
+
+            <Box display={"flex"} gap={"15px"} justifyContent={"center"} flexWrap={"wrap"} sx={{ width: '100%', height: "90%", backgroundColor: 'lightyellow', padding:"10px"}}>
+
+              {/* <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
+                <p>Hello</p>
+              </Box>
+
+
+              <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
+                <p>Hello</p>
+              </Box>
+
+              <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
+                <p>Hello</p>
+              </Box>
+
+              <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
+                <p>Hello</p>
+              </Box> */}
+
+              <Card sx={{ widht:"45%" , height:"45%" }}>
+                <CardContent>
+
+                  <Typography variant="h3">Hey how are you</Typography>
+                  <Typography variant="body1">Some random text should go here</Typography>
+                </CardContent>
+              
+              </Card>
+
+              <Card sx={{ widht:"45%" , height:"45%" }}>
+                <CardContent>
+
+                  <Typography variant="h3">Hey how are you</Typography>
+                  <Typography variant="body1">Some random text should go here</Typography>
+                </CardContent>
+              
+              </Card>
+
+              <Card sx={{ widht:"45%" , height:"45%" }}>
+                <CardContent>
+
+                  <Typography variant="h3">Hey how are you</Typography>
+                  <Typography variant="body1">Some random text should go here</Typography>
+                </CardContent>
+              
+              </Card>
+
+              <Card sx={{ widht:"45%" , height:"45%" }}>
+                <CardContent>
+
+                  <Typography variant="h3">Hey how are you</Typography>
+                  <Typography variant="body1">Some random text should go here</Typography>
+                </CardContent>
+              
+              </Card>
+
+
+
             </Box>
-          </Grid>
 
-          <Grid item style={{ width: '30%', backgroundColor: "skyblue", height: 1000 }}>
-            {/* Item 2 */}
 
-          </Grid>
-        </Grid>
+          </Box>
 
 
 
+        </Box>
 
+        <Box sx={{ width: '30%', height: 1000, backgroundColor: 'lightblue' }}>
+
+
+        </Box>
       </Box>
 
 
