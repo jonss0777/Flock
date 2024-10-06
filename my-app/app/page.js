@@ -28,8 +28,9 @@ export default function Home() {
             >
                 Community Points: 0
             </Typography>
+
             {/* Adjust marginTop to lift the buttons closer to the community points */}
-            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
                 {/* Icons for subjects as buttons */}
                 <Button onClick={() => handleSubjectClick('Science')} sx={{ margin: '0 10px', flexDirection: 'column', alignItems: 'center' }}>
                     <ScienceIcon fontSize="large" />
@@ -54,6 +55,14 @@ export default function Home() {
             >
                 Select a track to start exploring
             </Typography>
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                <img
+                    src="./room.png" // Replace with your image path
+                    alt="Description of Image"
+                    style={{ width: '80%', maxWidth: '600px', height: 'auto' }} // Adjust width as needed
+                />
+            </Box>
         </div>
     );
 }
