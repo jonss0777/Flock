@@ -1,6 +1,5 @@
 # Fluc
 
-
 **Presentation [link](https://www.canva.com/design/DAGSyy4qzbI/Mf_uRxLQuN10ZVG89azTuA/edit?utm_content=DAGSyy4qzbI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
 
 **Final Idea:** website that allows people to connect with student initiatives on campus 
