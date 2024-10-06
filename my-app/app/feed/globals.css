@@ -49,22 +49,19 @@
   justify-content: space-between;
 }
 
-/* Styling for each individual white box */
 .white-box {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 48%; /* Make each box 48% width for 2 columns */
-  margin-bottom: 20px; /* Add spacing between rows */
+  width: 80%; /* Adjust the width of each box */
+  background-color: #ffffff; /* Box background color */
+  padding: 20px; /* Add some padding */
+  text-align: center; /* Center the content inside each box */
+  border-radius: 10px; /* Rounded corners (optional) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for visual effect */
 }
 
 .box-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  width: 100%; /* Ensure the image takes full width of the box */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 8px; /* Optional: Round the image corners */
 }
 
 .box-title {
@@ -76,4 +73,11 @@
 .box-description {
   font-size: 16px;
   color: #666;
+}
+.boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Adjust spacing between the boxes */
+  justify-items: center; /* Center the boxes horizontally in their columns */
+  align-items: center;   /* Center the boxes vertically in their columns */
 }

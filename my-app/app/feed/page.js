@@ -2,6 +2,7 @@
 "use client"; // This tells Next.js this is a Client Component
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import './globals.css'; // Import the global CSS file
 
 const FeedPage = () => {
@@ -16,8 +17,8 @@ const FeedPage = () => {
       imgSrc: '/image1.png',
     },
     {
-      title: 'STEM Project 1',
-      description: 'This is a description for project 1.',
+      title: 'STEM Proj 1',
+      description: 'blah blah blah2',
       imgSrc: '/image1.png',
     }
   ];
@@ -46,13 +47,17 @@ const FeedPage = () => {
 
         {/* Display filtered boxes */}
         {filteredBoxes.length > 0 ? (
-          filteredBoxes.map((box, index) => (
-            <div key={index} className="white-box">
-              <img src={box.imgSrc} alt={box.title} className="box-image" />
-              <h2 className="box-title">{box.title}</h2>
-              <p className="box-description">{box.description}</p>
-            </div>
-          ))
+          <div className="boxes-grid">
+            {filteredBoxes.map((box, index) => (
+              <Link href="/project" key={index} passHref>
+                <div className="white-box">
+                  <img src={box.imgSrc} alt={box.title} className="box-image" />
+                  <h2 className="box-title">{box.title}</h2>
+                  <p className="box-description">{box.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         ) : (
           <p>No projects found</p> // Display this if no boxes match the search query
         )}
