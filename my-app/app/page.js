@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import BoxSx from "@/app/Box"; // Adjust according to your actual import
 import Typography from '@mui/material/Typography';
 import { Box, Button } from '@mui/material';
 import ScienceIcon from '@mui/icons-material/Science';
@@ -13,11 +12,11 @@ export default function Home() {
     const [username, setUsername] = useState('');
     const [collegeName, setCollegeName] = useState('');
     const [campusName, setCampusName] = useState('');
-    const [campusPoints, setCampusPoints] = useState(0); // Initialize with 0
+    const [campusPoints, setCampusPoints] = useState(0);
     const [loading, setLoading] = useState(true); // Loading state
 
-    const userId = '6702777dee86cd3de307cf42'; // Replace with the dynamic user ID
-    const campusId = '67027e0eee86cd3de307cf46'; // Replace with the specific campus ID
+    const userId = '6702777dee86cd3de307cf42';
+    const campusId = '67027e0eee86cd3de307cf46';
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -51,6 +50,7 @@ export default function Home() {
 
     const handleSubjectClick = (subject) => {
         console.log(`Clicked on ${subject}`);
+        window.location.href = '/feed';
     };
 
     return (
@@ -103,8 +103,7 @@ export default function Home() {
 
             <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <img
-                    src="./room.png" // Replace with your image path
-                    alt="Description of Image"
+                    src="./newroom.png"
                     style={{ width: '80%', maxWidth: '600px', height: 'auto' }}
                 />
             </Box>

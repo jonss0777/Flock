@@ -151,7 +151,6 @@ export default function MenuAppBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ backgroundColor: '#F5F5F5' }}>
                 <Toolbar>
-                    {/* Add your logo image */}
                     <ListItemAvatar>
                         <Avatar alt={userData ? userData.username : 'Loading...'} src="./logo.png" sx={{ width: 56, height: 56, marginTop: '10px' }} />
                     </ListItemAvatar>
