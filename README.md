@@ -12,7 +12,7 @@ Through a user-friendly interface of a campus, students are able to navigate fou
 
 The incentives are to gain community points for your virtual campus base through individual and group contributions. Your campus base will expand and look cooler while also being highlighted on the virtual global map. All participating schools will have a chance to be featured. Students will gain recognition for contributing to their community projects. In the future, we hope to partner with company sponsors and organizations for these incentives. They will be able to access more opportunities, perks, and events for their school.
 
-<img width="893" alt="image" src="https://github.com/user-attachments/assets/2c3818f2-74e1-4783-b5ec-40d6d11cc56d">
-<img width="870" alt="image" src="https://github.com/user-attachments/assets/23b81c9a-c4f8-49b1-8918-c794263c195c">
+<img width="875" alt="image" src="https://github.com/user-attachments/assets/2c3818f2-74e1-4783-b5ec-40d6d11cc56d">
+<img width="875" alt="image" src="https://github.com/user-attachments/assets/23b81c9a-c4f8-49b1-8918-c794263c195c">
 
 
