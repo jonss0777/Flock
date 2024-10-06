@@ -14,12 +14,25 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemText from '@mui/material/ListItemText';
 import SettingsIcon from '@mui/icons-material/Settings';
+import axios from 'axios'; // Import axios to fetch data
 
 export default function MenuAppBar() {
     const [auth, setAuth] = React.useState(true);
     const [drawerOpen, setDrawerOpen] = React.useState(false);
-    const username = "Aidar"; // Replace this with your dynamic username if needed
-    const collegeName = "College Name"; // Replace this with the actual college name
+    const [userData, setUserData] = React.useState(null); // Start as null
+
+    React.useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/api/user/67027c81ee86cd3de307cf44'); // Replace with actual user ID
+                setUserData(response.data);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        fetchUserData();
+    }, []);
 
     const toggleDrawer = (open) => () => {
         setDrawerOpen(open);
@@ -51,17 +64,26 @@ export default function MenuAppBar() {
                 <List>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar alt={username} src="./static/images/avatar/1.jpg" />
+                            <Avatar alt={userData ? userData.username : 'Loading...'} src="./static/images/avatar/1.jpg" />
                         </ListItemAvatar>
-                        <ListItemText
-                            primary={username}
-                            secondary={
-                                <Typography variant="body2" color="text.secondary" align="center">
-                                    Affiliation: {collegeName}
-                                </Typography>
-                            }
-                            sx={{ textAlign: 'center' }}
-                        />
+
+                        {userData ? (
+                            <ListItemText
+                                primary={userData.username}
+                                secondary={
+                                    <Typography variant="body2" color="text.secondary" align="center">
+                                        Affiliation: {userData.collegeName}
+                                    </Typography>
+                                }
+                                sx={{ textAlign: 'center' }}
+                            />
+                        ) : (
+                            <ListItemText
+                                primary="Loading..."
+                                secondary={<Typography variant="body2" color="text.secondary" align="center">Please wait</Typography>}
+                                sx={{ textAlign: 'center' }}
+                            />
+                        )}
                     </ListItem>
                 </List>
 
@@ -74,8 +96,8 @@ export default function MenuAppBar() {
                         width: '80%'
                     }}
                 >
-                    <Typography variant="body2" color="text.primary">
-                        Contribution Points: 0
+                    <Typography variant="h7" color="text.primary" sx={{ fontWeight: 'bold' }}>
+                        Contribution Points: {userData ? userData.contributionPoints : 0}
                     </Typography>
                 </Box>
 
@@ -127,11 +149,11 @@ export default function MenuAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ backgroundColor: 'white' }}>
+            <AppBar position="static" sx={{ backgroundColor: '#F5F5F5' }}>
                 <Toolbar>
                     {/* Add your logo image */}
                     <ListItemAvatar>
-                        <Avatar alt={username} src="./logo.png" sx={{ width: 56, height: 56, marginTop: '10px' }} />
+                        <Avatar alt={userData ? userData.username : 'Loading...'} src="./logo.png" sx={{ width: 56, height: 56, marginTop: '10px' }} />
                     </ListItemAvatar>
 
                     {/* Second image as a button to navigate to the homepage */}
@@ -141,13 +163,13 @@ export default function MenuAppBar() {
                         sx={{
                             marginLeft: '30px',
                             marginTop: '5px',
-                            padding: 0, // Remove padding
-                            borderRadius: 0, // Keep corners sharp
-                            width: 'auto', // Let the width adjust automatically
-                            height: 'auto', // Let the height adjust automatically
+                            padding: 1,
+                            borderRadius: 0,
+                            width: '80px',
+                            height: '10px',
                             '&:focus': {
-                                outline: 'none', // Remove the focus outline
-                                boxShadow: 'none' // Remove any box shadow if present
+                                outline: 'none',
+                                boxShadow: 'none'
                             }
                         }}
                     >
