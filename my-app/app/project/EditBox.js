@@ -15,7 +15,7 @@ const EditBox = ({ children,  primaryColor, primaryDark, pwidth, pheight }) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box
+            <Box 
                 sx={{
                     width: pwidth,
                     height: pheight,
