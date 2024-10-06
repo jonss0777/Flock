@@ -1,4 +1,6 @@
 # Fluc
+![image](https://github.com/user-attachments/assets/8dbf780e-3b36-470b-8744-eba8fbec8761)
+
 
 **Presentation [link](https://www.canva.com/design/DAGSyy4qzbI/Mf_uRxLQuN10ZVG89azTuA/edit?utm_content=DAGSyy4qzbI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
 
