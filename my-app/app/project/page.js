@@ -88,12 +88,12 @@ export default function Home() {
       <Box width={2000} height={1000} display="flex" flexDirection={"row"} m={2} >
 
         <Box  display="flex" justifyContent={"center"} flexDirection={"column"} alignItems={"center"} sx={{ width: '70%', height: 1000, padding:"15px" }}>
-          <Box   display="flex" justifyContent={"center"} sx={{ width: '100%', height:'20%', overflow:'hidden', position:'relative'}} >
+          <Box   display="flex" justifyContent={"center"} sx={{ width: '100%', height:'30%', overflow:'hidden', position:'relative'}} >
 
             <img alt="someImage" widht='100%' height='100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Aptenodytes_forsteri_-Snow_Hill_Island%2C_Antarctica_-adults_and_juvenile-8.jpg/188px-Aptenodytes_forsteri_-Snow_Hill_Island%2C_Antarctica_-adults_and_juvenile-8.jpg"></img>
           </Box>
 
-          <Box  sx={{ width: '100%', height:"40%", padding:"15px"}}>
+          <Box  sx={{ width: '100%', height:"30%", padding:"15px"}}>
 
             <Typography variant="h3">Floc Website</Typography>
             <Typography variant="body1">Join our team! We want to connect students with initiatives (led by peers) on campus to make opportunities more accessible. In order to succeed in college, students have to pursue extracurriculars and gain experience. People should be able to take full advantage of resources at their institutions, instead of it being hidden away in niche areas. By creating a centralized hub of initiatives and projects to improve your skills and contribute to your community in a positive way. 
@@ -102,10 +102,10 @@ Through a user-friendly interface of a campus, students are able to navigate fou
           </Box>
           <Box  sx={{ width: '100%', height:"40%", padding:"15px"}}>  
 
-            <Typography variant='h5'>Project Pics</Typography>
+            <Typography sx={{height:"10%"}} variant='h5'>Project Pics</Typography>
           
 
-          <ImageList sx={{ display: 'flex', overflowX: 'auto' }} cols={3}>
+          <ImageList sx={{ display: 'flex', overflowX: 'auto' , height: "90%"}} cols={3}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -147,66 +147,77 @@ Through a user-friendly interface of a campus, students are able to navigate fou
             </Box>
 
 
-            <Box display={"flex"}  justifyContent={"center"} flexWrap={"wrap"} sx={{ width: '100%', height: "90%", backgroundColor: 'lightyellow', padding:"10px"}}>
+            <Box display={"flex"} gap={"10px"} flexWrap={"wrap"} sx={{ width: '100%', height: "90%", backgroundColor: 'lightyellow'}}>
 
-              {/* <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
-                <p>Hello</p>
-              </Box>
-
-
-              <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
-                <p>Hello</p>
-              </Box>
-
-              <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
-                <p>Hello</p>
-              </Box>
-
-              <Box sx={{ width: '45%', height: '45%', backgroundColor: "grey" }}>
-                <p>Hello</p>
-              </Box> */}
-
-              <Card sx={{ widht:"50%" , height:"50%", padding:"15px", margin:"15px"}}>
-                <CardContent >
-
-                  <Typography variant="h3">Thread</Typography>
-                  <Typography variant="body1">Blah blah</Typography>
-                  <Typography variant="h3"> Comments </Typography>
-                </CardContent>
-              
-              </Card>
-              <Card sx={{ widht:"50%" , height:"50%", padding:"15px", margin:"15px" }}>
-                <CardContent>
-
-                <Typography variant="h3">Thread</Typography>
-                  <Typography variant="body1">Blah blah</Typography>
-                  <Typography variant="h3"> Comments </Typography>
-                </CardContent>
-              
-              </Card>
-
-              <Card sx={{ widht:"50%" , height:"50%", padding:"15px", margin:"15px" }}>
-                <CardContent>
-                <Typography variant="h3">Thread</Typography>
-                  <Typography variant="body1">Blah blah</Typography>
-                  <Typography variant="h3"> Comments </Typography>
-                </CardContent>
-              
-              </Card>
-
-              <Card sx={{ widht:"50%" , height:"50%", padding:"15px", margin:"15px" }}>
-                <CardContent>
-
-                <Typography variant="h3">Thread</Typography>
-                  <Typography variant="body1">Blah blah</Typography>
-                  <Typography variant="h3"> Comments </Typography>
-                </CardContent>
-              
-              </Card>
+            
+          
 
 
+<Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2, // Gap between rows,
+        margin: "20px 40px 20px 40px",
+        height: "100%",
+        width: "100%"
+      }}
+    >
+      <Box sx={{ display: 'flex', gap: 2 }}>
+        <Box
+          sx={{
+            flex: 1,
+            height:325,
+            backgroundColor: 'primary.main',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography color="white">Column 1</Typography>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            height: 325,
+            backgroundColor: 'secondary.main',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography color="white">Column 2</Typography>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', gap: 2 }}>
+        <Box
+          sx={{
+            flex: 1,
+            height:325,
+            backgroundColor: 'success.main',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography color="white">Column 3</Typography>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            height: 325,
+            backgroundColor: 'error.main',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography color="white">Column 4</Typography>
+        </Box>
+      </Box>
+    </Box>
 
-            </Box>
+              </Box> 
 
 
           </Box>
