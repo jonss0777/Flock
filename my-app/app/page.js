@@ -48,6 +48,12 @@ export default function Home() {
                     <Typography variant="caption">Art</Typography>
                 </Button>
             </Box>
+            <Typography
+                variant="body1"
+                sx={{ marginTop: '20px', color: 'gray', fontFamily: 'Montserrat' }} // Adjust margin and color as needed
+            >
+                Select a track to start exploring
+            </Typography>
         </div>
     );
 }
