@@ -27,31 +27,31 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    img: '',
     title: 'Breakfast',
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    img: '',
     title: 'Burger',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    img: '',
     title: 'Camera',
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    img: '',
     title: 'Coffee',
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+    img: '',
     title: 'Hats',
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+    img: '',
     title: 'Honey',
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    img: '',
     title: 'Basketball',
   },
   {
@@ -105,7 +105,7 @@ Through a user-friendly interface of a campus, students are able to navigate fou
             <Typography sx={{height:"10%"}} variant='h5'>Project Pics</Typography>
           
 
-          <ImageList sx={{ display: 'flex', overflowX: 'auto' , height: "90%"}} cols={3}>
+          <ImageList sx={{ display: 'flex', overflowX: 'auto' , height: "90%", width:"100%"}} cols={3}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -168,25 +168,30 @@ Through a user-friendly interface of a campus, students are able to navigate fou
           sx={{
             flex: 1,
             height:325,
-            backgroundColor: 'primary.main',
+            backgroundColor: 'lightgrey',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            flexDirection:"column",
           }}
         >
-          <Typography color="white">Column 1</Typography>
+          <Typography variant="h2" color="black">Column 1</Typography>
+          <Typography  variant="body1" color="black">Column 1</Typography>
         </Box>
         <Box
           sx={{
             flex: 1,
             height: 325,
-            backgroundColor: 'secondary.main',
+            backgroundColor: 'lightgrey',
             display: 'flex',
             alignItems: 'center',
+          
             justifyContent: 'center',
+            flexDirection:"column",
           }}
         >
-          <Typography color="white">Column 2</Typography>
+         <Typography variant="h2" color="black">Column 1</Typography>
+         <Typography  variant="body1" color="black">Column 1</Typography>
         </Box>
       </Box>
       <Box sx={{ display: 'flex', gap: 2 }}>
@@ -194,25 +199,31 @@ Through a user-friendly interface of a campus, students are able to navigate fou
           sx={{
             flex: 1,
             height:325,
-            backgroundColor: 'success.main',
+            backgroundColor: 'lightgrey',
             display: 'flex',
             alignItems: 'center',
+           
             justifyContent: 'center',
+            flexDirection:"column",
           }}
         >
-          <Typography color="white">Column 3</Typography>
+         <Typography variant="h2" color="black">Column 1</Typography>
+         <Typography  variant="body1" color="black">Column 1</Typography>
         </Box>
         <Box
           sx={{
             flex: 1,
             height: 325,
-            backgroundColor: 'error.main',
+            backgroundColor: 'lightgrey',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            justifyContent: 'center',
+            flexDirection:"column",
           }}
         >
-          <Typography color="white">Column 4</Typography>
+         <Typography variant="h2" color="black">Column 1</Typography>
+         <Typography  variant="body1" color="black">Column 1</Typography>
         </Box>
       </Box>
     </Box>
