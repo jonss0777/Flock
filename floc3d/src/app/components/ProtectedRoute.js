@@ -1,17 +1,22 @@
+import React, { useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
   const router = useRouter();
 
-  if (!isAuthenticated) {
-    router.push('/login'); // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      router.push('/login'); // Redirect to login if not authenticated
+    }
+  }, [isAuthenticated, loading, router]);
+
+  if (loading) {
+    return <div>Loading...</div>; // Optionally show a loading spinner
   }
- 
-  return isAuthenticated ? children : null; // Render children if authenticated
+
+  return <>{children}</>; // Render protected content if authenticated
 };
 
 export default ProtectedRoute;
-

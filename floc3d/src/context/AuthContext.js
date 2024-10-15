@@ -1,21 +1,20 @@
-import React, { createContext, useEffect,useContext, useState } from 'react';
-
-import Cookies from 'js-cookie'
+import React, { createContext, useEffect, useContext, useState } from 'react';
+import Cookies from 'js-cookie';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true); // New loading state
 
-  useEffect(() =>{
+  useEffect(() => {
     const token = Cookies.get('authToken');
-    if(token){
-      setIsAuthenticated(true)
-    }
-  }, [])
-  
+    setIsAuthenticated(!!token); // Update authenticated state
+    setLoading(false); // Set loading to false after check
+  }, []);
+
   const login = (token) => {
-    Cookies.set('authToken', token, {expires: 7});
+    Cookies.set('authToken', token, { expires: 7 });
     setIsAuthenticated(true);
   };
 
@@ -23,11 +22,9 @@ export const AuthProvider = ({ children }) => {
     Cookies.remove('authToken');
     setIsAuthenticated(false);
   };
+
   return (
-    // Passing the object to the value property
-    // makes the variable and functions avaible (state) available to 
-    // its children
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

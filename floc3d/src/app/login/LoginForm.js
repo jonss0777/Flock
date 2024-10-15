@@ -17,10 +17,22 @@ const LoginForm = () => {
   const { login } = useAuth();
   const router = useRouter();
 
-  const handleSubmit = (event) => {
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   // Simulate a login
+  //   // getting token from API
+  //   const token = 'your-auth-token'
+
+  //   console.log('Logging in with:', email, password);
+  //   login(token); // Update authentication state
+  //   router.push('/game'); // Redirect to home or dashboard
+  // };
+
+
+  const handleSubmit =  (event) => {
     event.preventDefault();
     // Simulate a login
-
+    // getting token from API
     const token = 'your-auth-token'
 
     console.log('Logging in with:', email, password);
